@@ -1,0 +1,16 @@
+const User = require("../schemamongo/schemaofmon");
+const getAllUser =  async (req,res) =>{
+ try{
+  const data = await Users.find();
+  if(!data || data===0)
+    {
+        res.status(400).json({message:"user cant get"});
+    }
+   return res.status(200).json(User);
+ }catch(e)
+ {
+  console.log(e);
+ }
+}
+
+module.exports = getAllUser;
